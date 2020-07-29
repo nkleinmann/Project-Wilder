@@ -2,10 +2,35 @@ $(function() {
 
     // event listenter for button(s)
 
+    
+
+    $(".button").on("click", function() {
+        let 
+        const queryURL = "https://api.nasa.gov/planetary/apod?" + hd + "&api_key=eyXRExqNDHTblcMXT6ShJzFdoCQWXOLEPjII8Qlc";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+        .then(function(response) {
+            let results = response.data;
+            console.log(results);
+            const apodImg = $("<img>");
+            const apodDiv = $("<div>");
+        })
+    })
+    
 
     // Dynamically add elements to page to display image 
 
 
+
+
+
+
+
+
+    // link with key 
+    // https://api.nasa.gov/planetary/apod?api_key=eyXRExqNDHTblcMXT6ShJzFdoCQWXOLEPjII8Qlc
 
     // Code to look at as help
 
