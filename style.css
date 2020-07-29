@@ -7,15 +7,20 @@ body {
 
 }
 
+.container {
+  padding-top: 2em;
+}
+
 .button {
   height: 40px;
   width: 150px;
   margin-top: 5px;
   /* margin-bottom: 5px; */
   /* padding: 5px; */
-  background-color: white;
+  background-color: #2244ff;
   border: 1px solid black;
-  text-align: left;
+  color: white;
+  text-align: center;
   font-size: 1.2em;
   line-height: 1.5;
 

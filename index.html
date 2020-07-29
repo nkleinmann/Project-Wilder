@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
     <link rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
@@ -12,25 +16,48 @@
     <title>Project-Wilder</title>
   </head>
   <body>
-    <div>
+    <header>
+      <h1>Pictures from Space</h1>
+    </header>
+    <div class="container">
       <section>
-        <div class="dailyImage">
-          <img src="phoneUI.png" alt="image of the day"/>
-          <hr>
+        <div class="row">
+          <button id="btnCollection" class="button col s3 push-s3">Collection</button>
+          <button id="btnSearchResults" class="button col s3 push-s3">Search Results</button>
         </div>
-        <div>
-          <button id="Btn1" class="button">Btn 1</button>
-          <button id="Btn2" class="button">Btn 2</button>
-          <button id="Btn3" class="button">Btn 3</button>
-          <button id="Btn4" class="button">Btn 4</button>
-          <button id="Btn5" class="button">Btn 5</button>
-          <button id="Btn6" class="button">Btn 6</button>
-          <hr>
+        <div class="row">
+          <div class="dailyImage">
+            <!-- <img src="phoneUI.png" alt="image of the day"/> -->
+            <img src="https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space" alt="image of the day"/>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col s3"></div>
+          <button id="Btn1" class="button col s2">Mars</button>
+          <button id="Btn2" class="button col s2">Astronomy</button>
+          <button id="Btn3" class="button col s2">EPIC</button>
+          <div class="col s3"></div>
+        </div>
+        <div class="row">
+          <div class="col s3"></div>
+          <button id="Btn4" class="button col s2">Btn 4</button>
+          <button id="Btn5" class="button col s2">Btn 5</button>
+          <button id="Btn6" class="button col s2">Btn 6</button>
+          <div class="col s3"></div>
+        </div>
+        <hr>
+        <div class="row">
+          <h4>Photo Details</h4>
           <textarea id="textHere" class="response"></textarea>
         </div>
       </section>
     </div>
 
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- moment.js cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./script.js"></script>
   </body>
