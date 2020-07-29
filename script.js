@@ -1,8 +1,8 @@
 $(function() {
 
+
     //Materialize 
       $('.datepicker').datepicker();
-
 
     // event listenter for button(s)
 
