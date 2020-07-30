@@ -3,7 +3,6 @@ $(function () {
     //Materialize 
     //   $('.datepicker').datepicker();
 
-
     // event listenter for button(s)
 
     var searchDate = "2020-07-28";
