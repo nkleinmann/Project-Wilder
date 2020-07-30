@@ -29,9 +29,9 @@
           <div class="col s3">
             <button id="btnPrevious" class="transport">Prev</button>
           </div>
-          <div id="dailyImage" class="col s6">
+          <div class="col s6">
             <!-- <img src="phoneUI.png" alt="image of the day"/> -->
-            <img class="responsive-img" src="potw2025a.jpg" alt="image of the day"/>
+            <img id="dailyImage" class="responsive-img" src="potw2025a.jpg" alt="image of the day"/>
             <!-- <img class="responsive-img" src="https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space" alt="image of the day"/> -->
           </div>
           <div class="col s3">
@@ -47,32 +47,40 @@
           <div class="col s3"></div>
         </div>
         <div class="row">
-          <!-- <div class="col s3"></div> -->
-          <!-- <div class="col s12"></div> -->
-            <form action="/action_page.php">
-              <label for="searchDate">Choose a date:</label>
-              <input type="text" class="datepicker" id="searchDate" name="searchDate">
+          <div class="col s2">
+            <label>Choose a date:</label>
+           </div>
+           <div class="col s3">
+              <input type="text" class="datepicker">
+          </div>
+         <div class="col s2">
               <input type="submit" value="Submit">
-            </form>
+          </div>
+            <!-- <form action="/action_page.php"> -->
+              
+           <!-- <label for="searchDate">Choose a date:</label> -->
+              <!-- <input type="date" id="searchDate" name="searchDate"> -->
+              <!-- <input type="text" class="datepicker" id="searchDate" name="searchDate"> -->
+              
+            <!-- </form> -->
 
           <!-- <button id="Btn4" class="button col s2">Btn 4</button> -->
           <!-- <button id="Btn5" class="button col s2">Btn 5</button> -->
           <!-- <button id="Btn6" class="button col s2">Btn 6</button> -->
-          <!-- <div class="col s3"></div> -->
         </div>
-        <hr>
         <div class="row">
           <h4>Photo Details</h4>
           <textarea id="textHere" class="response"></textarea>
         </div>
       </section>
     </div>
-
+    <hr>
+    
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- moment.js cdn  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./script.js"></script>
     <script src="./script2.js"></script>
   </body>
