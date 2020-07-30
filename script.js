@@ -6,6 +6,7 @@ $(function () {
     // event listenter for button(s)
 
     var searchDate = "2020-07-28";
+    const apodImg = $("<img>");
 
 
     $(".button").on("click", function () {
@@ -18,14 +19,16 @@ $(function () {
         $.ajax(settings).done(function (response) {
             console.log(response);
         });
-        // .then(function(response) {
-        //     let results = response.data;
-        //     console.log(results);
-        //     const apodImg = $("<img>");
-        //     const apodDiv = $("<div>");
-        //  })
     })
-
+    
+    .then(function(response) {
+        let results = response.data;
+        console.log(results);
+        const imgURL = response.url;
+        apodImg.attr("src", imgURL);
+        // const apodDiv = $("<div>");
+        
+     })
 
     // Dynamically add elements to page to display image 
 
