@@ -34,11 +34,23 @@ body {
 
 }
 
+.waves-effect.waves-blue {
+  background-color: #2244ff;
+  border: 1px solid white;
+}
+
+input {
+  border: 1px solid white;
+  color: white;
+}
+
 .response {
   padding: 5px;
   /* width: 400px; */
   height: 100px;
 }
+
+
 
 /* ---- particles.js container ---- */
 
