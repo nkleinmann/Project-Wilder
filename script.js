@@ -7,9 +7,10 @@ $(function () {
 
     var searchDate = "2020-07-28";
     const apodImg = $("#dailyImage");
+    const photoDetails = $("#textHere");
 
 
-    $(".button").on("click", function () {
+    $("#Btn2").on("click", function () {
         var settings = {
             "url": "https://api.nasa.gov/planetary/apod?api_key=vpUsbRtc2uBC7le2YXjPI6Nk1E5HtnsevXOvkGTe&date=" + searchDate,
             "method": "GET",
@@ -25,7 +26,8 @@ $(function () {
             const imgURL = response.url;
             apodImg.attr("src", imgURL);
             // const apodDiv = $("<div>");
-            
+            const photoText = response.explanation;
+            photoDetails.text(photoText);
          });
     })
     
