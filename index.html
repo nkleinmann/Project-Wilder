@@ -15,78 +15,93 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Project-Wilder</title>
   </head>
+  <!-- <body class="grey darken-4"> -->
   <body>
-    <header>
-      <h1>Pictures from Space</h1>
-    </header>
-    <div class="container">
-      <section>
-        <div class="row">
-          <a href="collection.html"><button id="btnCollection" class="button col s3 push-s3">Collection</button></a>
-          <a href="index.html"><button id="btnSearchResults" class="button col s3 push-s3">Search Results</button></a>
-          <button id="btnSave" class="button col s1 push-s4" ><i class="fas fa-save"></i></button>
-          <!-- <button id="btnCollection" class="col s3 push-s3"><a href="collection.html">Collection</a></button> -->
-          <!-- <button id="btnSearchResults" class="col s3 push-s3" href="index.html">Search Results</button> -->
-        </div>
-        <div class="row">
-          <div class="col s3">
-            <button id="btnPrevious" class="transport">Prev</button>
+    <!-- particles.js container -->
+    <div id="particles-js">
+      <header>
+        <h1>Pictures from Space</h1>
+      </header>
+      <div class="container">
+        <section>
+          <div class="row">
+            <a href="collection.html" id="btnCollection" class=" btn waves-effect waves-blue col s3 push-s3">Collection</a>
+            <a href="index.html" id="btnSearchResults" class=" btn waves-effect waves-blue col s3 push-s3">Search Results</a>
+            <button id="btnSave" class=" btn waves-effect waves-blue col s1 push-s4" ><i class="fas fa-save"></i></button>
+            <!-- <button id="btnCollection" class="col s3 push-s3"><a href="collection.html">Collection</a></button> -->
+            <!-- <button id="btnSearchResults" class="col s3 push-s3" href="index.html">Search Results</button> -->
           </div>
-          <div class="col s6">
-            <!-- <img src="phoneUI.png" alt="image of the day"/> -->
-            <!-- <img id="dailyImage" class="responsive-img" src="potw2025a.jpg" alt="image of the day"/> -->
-            <img id="imgSearch" class="responsive-img" src="https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space" alt="image of the day"/>
+          <div class="row">
+            <div class="col s3">
+              <button id="btnPrevious" class="transport btn waves-effect waves-blue"><i class="fas fa-chevron-left fa-2x"></i></button>
+            </div>
+            <div class="col s6">
+              <!-- <img src="phoneUI.png" alt="image of the day"/> -->
+              <!-- <img id="dailyImage" class="responsive-img" src="potw2025a.jpg" alt="image of the day"/> -->
+              <img id="imgSearch" class="responsive-img" src="https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space" alt="image of the day"/>
+            </div>
+            <div class="col s3">
+              <button id="btnNext" class="transport btn waves-effect waves-blue"><i class="fas fa-chevron-right fa-2x"></i></button>
+            </div>
           </div>
-          <div class="col s3">
-            <button id="btnNext" class="transport">Next</button>
+          <hr>
+          <p>Choose a caytagory;</p>
+          <div class="row">
+            <div class="col s3"></div>
+            <button id="Btn1" class="button col s2">Mars</button>
+            <button id="Btn2" class="button col s2">Astronomy</button>
+            <button id="Btn3" class="button col s2">Astroid</button>
+            <div class="col s3"></div>
           </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col s3"></div>
-          <button id="Btn1" class="button col s2">Mars</button>
-          <button id="Btn2" class="button col s2">Astronomy</button>
-          <button id="Btn3" class="button col s2">Astroid</button>
-          <div class="col s3"></div>
-        </div>
-        <div class="row">
-          <div class="col s3"></div>
-          <div class="col s2">
-            <!-- <label>Choose a date:</label> -->
-            <p>Choose a date:</p>
-          </div>
-          <div class="col s3">
-            <!-- <input type="text" class="datepicker"> -->
-            <input type="date" id="searchDate" name="searchDate">
-          </div>
-          <div class="col s1">
-            <!-- <button type="submit">Search</button> -->
-              <input type="submit" value="Search">
-          </div>
-            <!-- <form action="/action_page.php"> -->
-              
-           <!-- <label for="searchDate">Choose a date:</label> -->
-              <!-- <input type="text" class="datepicker" id="searchDate" name="searchDate"> -->
-              
-            <!-- </form> -->
+          <div class="row">
+            <div class="col s2"></div>
+            <div class="col s2">
+              <!-- <label>Choose a date:</label> -->
+              <p>Choose a date:</p>
+            </div>
+            <div class="col s3">
+              <!-- <input type="text" class="datepicker"> -->
+              <input type="date" id="searchDate" name="searchDate">
+            </div>
+            <div class="col s1">
+              <button class="btn waves-effect waves-blue" type="submit">Search</button>
+              <!-- <input type="submit" value="Search"> -->
+            </div>
+              <!-- <form action="/action_page.php"> -->
+                
+            <!-- <label for="searchDate">Choose a date:</label> -->
+                <!-- <input type="text" class="datepicker" id="searchDate" name="searchDate"> -->
+                
+              <!-- </form> -->
 
-          <!-- <button id="Btn4" class="button col s2">Btn 4</button> -->
-          <!-- <button id="Btn5" class="button col s2">Btn 5</button> -->
-          <!-- <button id="Btn6" class="button col s2">Btn 6</button> -->
-        </div>
-        <div class="row">
-          <h4>Photo Details</h4>
-          <textarea id="textHere" class="response"></textarea>
-        </div>
-      </section>
+            <!-- <button id="Btn4" class="button col s2">Btn 4</button> -->
+            <!-- <button id="Btn5" class="button col s2">Btn 5</button> -->
+            <!-- <button id="Btn6" class="button col s2">Btn 6</button> -->
+          </div>
+          <div class="row">
+            <h4>Photo Details</h4>
+            <textarea id="textHere" class="response col s10 push-s1"></textarea>
+          </div>
+        </section>
+      </div>  
     </div>
     <hr>
+
+
     
+    <!-- <canvas class="background"></canvas> -->
     <!-- moment.js cdn  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- jQuery cdn  -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- materialize cdn  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- particles.js cdn  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script> -->
+    <!-- js file links  -->
     <script src="./script.js"></script>
     <script src="./script2.js"></script>
+    <script src="./particles.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>

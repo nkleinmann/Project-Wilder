@@ -4,7 +4,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   text-align: center;
-
+  color: white;
+	width:100%;
+	height:100%;
+	background:#000044;
 }
 
 .container {
@@ -16,15 +19,14 @@ body {
   height: 60px;
   width: 60px;
 }
-
 .button {
+  margin-top: 5px;
   height: 40px;
   width: 150px;
-  margin-top: 5px;
-  /* margin-bottom: 5px; */
-  /* padding: 5px; */
+}
+.transport, .button {
   background-color: #2244ff;
-  border: 1px solid black;
+  border: 1px solid white;
   color: white;
   text-align: center;
   font-size: 1.2em;
@@ -32,9 +34,34 @@ body {
 
 }
 
+.waves-effect.waves-blue {
+  background-color: #2244ff;
+  border: 1px solid white;
+}
+
+input {
+  border: 1px solid white;
+  color: white;
+}
+
 .response {
-  padding: 50px;
-  width: 400px;
+  padding: 5px;
+  /* width: 400px; */
   height: 100px;
 }
+
+
+
+/* ---- particles.js container ---- */
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #080a3b;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
 
