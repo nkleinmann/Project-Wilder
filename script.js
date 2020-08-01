@@ -10,8 +10,11 @@ $(function () {
     const apodImg = $("#imgSearch");
     const photoDetails = $("#textHere");
     let marsQ = [];
+    const mars = $("#Btn1");
+    const Astronomy = $("#Btn2");
+    const Hubble = $("#Btn3");
 
-    $("#Btn1").on("click", function () {
+    $(mars).on("click", function () {
         var settings = {
             "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=999&camera=mast&api_key=DEMO_KEY",
             "method": "GET",
@@ -36,8 +39,9 @@ $(function () {
             });
     });
 
-    $("#Btn2").on("click", function () {
+    $(Astronomy).on("click", function () {
         category = "apod";
+        $(Astronomy).addClass("active")
     }); 
 
     $("#searchBtn").on("click", function (event) {
