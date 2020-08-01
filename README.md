@@ -1,8 +1,15 @@
 # Project-Wilder
 
-Macks Branch active
+Image object properties include;
+  imageURL; the link to the picture
+  imageInfo; the story behind the image. (apod comes with significent story attached, for the others, we may need to build that.)
+  imageDate; the search parameter we use to get the image in the first place.
 
-![image](PfSUIv1.0.png "basic layout")
+Mars rover API delivers hundreds of images on every request. Only the first 10 need to be captured for this project. Search parameters should include earth_date and camera. (don't use "sol" search parameter) 
+
+
+
+![image](PfSUIv1.1.png "basic layout")
 
 Collection and Search Results buttons should each have on and off states with changing colors and be mutually exclusive (like radio buttons) so one will always be active and the other inactive.
 When "Collection" is active, a "delete" button should appear to the left of it. 
