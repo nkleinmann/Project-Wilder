@@ -1,34 +1,35 @@
 $(function (){
     const photoDetails = $("#textHere");
 
-    // Photo array. This will have to change once save button works.
-    let photoArray = [
-        {
-            URL: "https://apod.nasa.gov/apod/image/2007/Mars2020launchKraus1024.jpg",
-            Date: "07-03-2020",
-            Description: "First photo",
-        }, 
-        {
-            URL: "https://apod.nasa.gov/apod/image/2007/Kristine-Rose-Photography-20200616_001s1024.jpg",
-            Date: "07-04-2020",
-            Description: "Second photo",
-        }, 
-        {
-            URL: "https://apod.nasa.gov/apod/image/2007/N6188_Cappelletti_960.jpg",
-            Date: "07-05-2020",
-            Description: "Third photo",
-        }, 
-        {
-            URL: "https://apod.nasa.gov/apod/image/2007/ldn1251_jerahian1024.jpg",
-            Date: "07-06-2020",
-            Description: "Fourth photo",
-        }, 
-        {
-            URL: "https://apod.nasa.gov/apod/image/2007/msv1000crop.jpg",
-            Date: "07-07-2020",
-            Description: "Fifth photo",
-        },     
-    ];
+
+    // // Photo array. This will have to change once save button works.
+    // let photoArray = [
+    //     {
+    //         URL: "https://apod.nasa.gov/apod/image/2007/Mars2020launchKraus1024.jpg",
+    //         Date: "07-03-2020",
+    //         Description: "First photo",
+    //     }, 
+    //     {
+    //         URL: "https://apod.nasa.gov/apod/image/2007/Kristine-Rose-Photography-20200616_001s1024.jpg",
+    //         Date: "07-04-2020",
+    //         Description: "Second photo",
+    //     }, 
+    //     {
+    //         URL: "https://apod.nasa.gov/apod/image/2007/N6188_Cappelletti_960.jpg",
+    //         Date: "07-05-2020",
+    //         Description: "Third photo",
+    //     }, 
+    //     {
+    //         URL: "https://apod.nasa.gov/apod/image/2007/ldn1251_jerahian1024.jpg",
+    //         Date: "07-06-2020",
+    //         Description: "Fourth photo",
+    //     }, 
+    //     {
+    //         URL: "https://apod.nasa.gov/apod/image/2007/msv1000crop.jpg",
+    //         Date: "07-07-2020",
+    //         Description: "Fifth photo",
+    //     },     
+    // ];
     console.log(photoArray);
 
     //Setting where to store image and setting photoIndex so the next and previous buttons work
@@ -90,14 +91,7 @@ $(function (){
     //     event.preventDefault();
 
     
-    //     // photoArray.forEach(function(photoURL) {
-    //     //     console.log(photoURL);
-        
-    //     //     let imageURL = photoURL;
-    //     //     $("#imgSearch").attr("src", imageURL);
-    //     //     //Need to call local storage
-          
-    //     // }) ;
+    
 
         
 
