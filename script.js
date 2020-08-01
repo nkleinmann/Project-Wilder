@@ -5,7 +5,8 @@ $(function () {
 
     // event listenter for button(s)
 
-    var searchDate = "2020-07-28";
+    let category = "";
+    let searchDate = $("#searchDate");
     const apodImg = $("#imgSearch");
     const photoDetails = $("#textHere");
     let marsQ = [];
@@ -36,27 +37,35 @@ $(function () {
     });
 
     $("#Btn2").on("click", function () {
-        var settings = {
-            "url": "https://api.nasa.gov/planetary/apod?api_key=vpUsbRtc2uBC7le2YXjPI6Nk1E5HtnsevXOvkGTe&date=" + searchDate,
-            "method": "GET",
-            "timeout": 0,
-        };
+        category = "apod";
+    }); 
 
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        })
+    $("#searchBtn").on("click", function (event) {
+        event.preventDefault();
+        if(category === "apod") {
+            var settings = {
+                "url": "https://api.nasa.gov/planetary/apod?api_key=vpUsbRtc2uBC7le2YXjPI6Nk1E5HtnsevXOvkGTe&date=" + searchDate.val(),
+                "method": "GET",
+                "timeout": 0,
+            };
 
-        .then(function(response) {
-            let results = response.data;
-            console.log(results);
-            const imgURL = response.url;
-            apodImg.attr("src", imgURL);
-            // const apodDiv = $("<div>");
-            const photoText = response.explanation;
-            photoDetails.text(photoText);
-         });
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            })
+
+            .then(function(response) {
+                let results = response.data;
+                console.log(results);
+                const imgURL = response.url;
+                apodImg.attr("src", imgURL);
+                // const apodDiv = $("<div>");
+                const photoText = response.explanation;
+                photoDetails.text(photoText);
+            });
+
+        }    
     });
-    
+        
 
     // Dynamically add elements to page to display image 
 
