@@ -14,6 +14,7 @@ $(function () {
     const Astronomy = $("#Btn2");
     const Hubble = $("#Btn3");
     let photoArray = [];
+    let photoObject = {};
 
     $(mars).on("click", function () {
         var settings = {
@@ -78,29 +79,21 @@ $(function () {
     // https://api.nasa.gov/planetary/apod?api_key=eyXRExqNDHTblcMXT6ShJzFdoCQWXOLEPjII8Qlc
 
         //Defining function to add array to local storage
-        function addPhotoInfo(photoArray) {
+        function addPhotoInfo() {
+            photoObject = {
+                date : searchDate.val(),
+                url : apodImg.attr("src"),
+                details : photoDetails.val() 
+            }
+            console.log(photoObject);
+
+            photoArray.push(photoObject);
             console.log(photoArray);
-            
-          //   // taking key to get items
-          //   let namesCity = localStorage.getItem("cityNames");
-          //   // taking string from local storage and putting back in original form
-          //   namesCity = JSON.parse(namesCity) || [];
-          //   namesCity.push(citySearch);
-          //   // setting item from array to local storage
-          //   localStorage.setItem("cityNames", JSON.stringify(namesCity));
-      
-            //     // photoArray.forEach(function(photoURL) {
-          //     //     console.log(photoURL);
-              
-          //     //     let imageURL = photoURL;
-          //     //     $("#imgSearch").attr("src", imageURL);
-          //     //     //Need to call local storage
-                
-          //     // }) ;
+          
           }
       
           $("#btnSave").on("click", function() {
-              addPhotoInfo(photoArray)
+              addPhotoInfo()
           });
 
  
