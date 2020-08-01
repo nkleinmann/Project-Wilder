@@ -40,6 +40,8 @@ $(function (){
         if (photoIndex >= photoArray.length) {
             photoIndex = 0;
         };
+        let photoText = response.explanation[photoIndex];
+        photoDetails.text(photoText);
 
     })
 
