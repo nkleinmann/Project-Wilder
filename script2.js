@@ -30,7 +30,7 @@ $(function (){
     //         Description: "Fifth photo",
     //     },     
     // ];
-    console.log(photoArray);
+    // console.log(photoArray);
 
     //Setting where to store image and setting photoIndex so the next and previous buttons work
     const imgDisplay = $("#imgCollection");
