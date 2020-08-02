@@ -9,8 +9,7 @@ $(function (){
     //Displaying generic photo when switched to collection page
     $(imgDisplay).attr("src", "https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space");
 
-
-
+    //Gets photoInfoArray from local storage
     function getLocalStorage() {
         photoInfoArray = JSON.parse(localStorage.getItem("photoInfo"));
         if (photoInfoArray !== null) {
@@ -18,13 +17,16 @@ $(function (){
             console.log("It works!");
         }
     };
- 
 
+    //When the delete button is clicked, delete relevant object in array from local storage
+
+    //When the search results button is clicked show relevant HTML and hide other section
     $("#btnSearchResults").on("click", function(event) {
         $(".searchPage").show();
         $(".collectionPage").hide();
     });
 
+    //When the collection button is clicked show relevant HTML and hide other section
     $("#btnCollection").on("click", function(event) {
         event.preventDefault();
         $(".searchPage").hide();
@@ -44,7 +46,7 @@ $(function (){
      
         //Setting photo description to variable and adding to page
         photoText = photoInfoArray[photoIndex].details;
-        photoDetails.val(photoText);
+        photoDetails.text(photoText);
 
         photoIndex++;
 
@@ -68,7 +70,7 @@ $(function (){
 
         //Setting photo description to variable and adding to page
         photoText = photoInfoArray[photoIndex].details;
-        photoDetails.val(photoText);
+        photoDetails.text(photoText);
         console.log(photoText);
 
         photoIndex--;
