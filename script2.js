@@ -4,6 +4,7 @@ $(function (){
     //Setting where to store image and setting photoIndex so the next and previous buttons work
     const imgDisplay = $("#imgCollection");
     let photoIndex = 0;
+    let photoText = "";
 
     //Displaying generic photo when switched to collection page
     $(imgDisplay).attr("src", "https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space");
@@ -42,8 +43,8 @@ $(function (){
         $(imgDisplay).attr("src", imageURL);
      
         //Setting photo description to variable and adding to page
-        let photoText = photoInfoArray[photoIndex].details;
-        photoDetails.text(photoText);
+        photoText = photoInfoArray[photoIndex].details;
+        photoDetails.val(photoText);
 
         photoIndex++;
 
@@ -66,15 +67,19 @@ $(function (){
         $(imgDisplay).attr("src", imageURL);
 
         //Setting photo description to variable and adding to page
-        let photoText = photoInfoArray[photoIndex].details;
-        photoDetails.text(photoText);
+        photoText = photoInfoArray[photoIndex].details;
+        photoDetails.val(photoText);
+        console.log(photoText);
 
         photoIndex--;
 
         //If photoIndex is less than or equal to 0, set photoIndex to index of last photo and go to last photo
-        if (photoIndex <= 0) {
-            photoIndex = photoInfoArray.length - 1;
+        if (photoIndex < 0) {
+            photoIndex = photoInfoArray.length-1;
+            console.log(photoIndex);
         };
+
+        
     });
 
 
