@@ -18,7 +18,12 @@ $(function (){
         }
     };
 
-    //When the delete button is clicked, delete relevant object in array from local storage
+    // //When the delete button is clicked, delete relevant object in array from local storage
+    // $("#btnDelete").on("click", function() {
+    //     // sets photoInfoArray to updated array (deletes object at index of photoIndex)
+    //     photoInfoArray = photoInfoArray.splice(photoIndex, 1);
+    //     console.log(photoInfoArray);
+    // })
 
     //When the search results button is clicked show relevant HTML and hide other section
     $("#btnSearchResults").on("click", function(event) {
