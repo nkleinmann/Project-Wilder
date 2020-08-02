@@ -92,9 +92,14 @@ $(function () {
           
           }
       
+        
+          
+          
           $("#btnSave").on("click", function() {
-              addPhotoInfo()
+              addPhotoInfo();
+              localStorage.setItem("photoInfo", JSON.stringify(photoArray));
           });
 
  
+          
 });
