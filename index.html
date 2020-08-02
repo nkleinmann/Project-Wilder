@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 
-    <link rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./style.css" />
-    <title>Project-Wilder</title>
-  </head>
-  <!-- <body class="grey darken-4"> -->
-  <body>
-    <header>
-      <h1>Pictures from Space</h1>
-    </header>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Project-Wilder</title>
+</head>
+<!-- <body class="grey darken-4"> -->
+
+<body>
+  <header>
+    <h1>Pictures from Space</h1>
+  </header>
+  <!--Start of Search Page-->
+  <section class="searchPage">
     <div class="container">
       <section>
         <div class="row">
-          <a href="collection.html" id="btnCollection" class=" btn waves-effect waves-blue col s3 push-s3">Collection</a>
-          <a href="index.html" id="btnSearchResults" class=" btn waves-effect waves-light col s3 push-s3">Search Results</a>
-          <button id="btnSave" class=" btn waves-effect waves-blue col s1 push-s4" ><i class="fas fa-save"></i></button>
+          <a href="collection.html" id="btnCollection"
+            class=" btn waves-effect waves-blue col s3 push-s3">Collection</a>
+          <a href="index.html" id="btnSearchResults" class=" btn waves-effect waves-light col s3 push-s3">Search
+            Results</a>
+          <button id="btnSave" class=" btn waves-effect waves-blue col s1 push-s4"><i class="fas fa-save"></i></button>
           <!-- <button id="btnCollection" class="col s3 push-s3"><a href="collection.html">Collection</a></button> -->
           <!-- <button id="btnSearchResults" class="col s3 push-s3" href="index.html">Search Results</button> -->
         </div>
         <div class="row">
           <div class="col s3">
-            <button id="btnSearchPrev" class="transport btn waves-effect waves-blue"><i class="fas fa-chevron-left fa-2x"></i></button>
+            <button id="btnSearchPrev" class="transport btn waves-effect waves-blue"><i
+                class="fas fa-chevron-left fa-2x"></i></button>
           </div>
           <div class="col s6">
             <!-- <img  id="imgSearch"class="responsive-img" src="https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space" alt="image of the day"/> -->
             <!-- <img id="imgSearch" class="responsive-img" src="potw2025a.jpg" alt="image of the day"/> -->
-            <img id="imgSearch" class="responsive-img" src="https://images-assets.nasa.gov/image/as11-40-5874/as11-40-5874~orig.jpg" alt="image of the day"/> -->
+            <img id="imgSearch" class="responsive-img"
+              src="https://images-assets.nasa.gov/image/as11-40-5874/as11-40-5874~orig.jpg" alt="image of the day" />
           </div>
           <div class="col s3">
-            <button id="btnSearchNext" class="transport btn waves-effect waves-blue"><i class="fas fa-chevron-right fa-2x"></i></button>
+            <button id="btnSearchNext" class="transport btn waves-effect waves-blue"><i
+                class="fas fa-chevron-right fa-2x"></i></button>
           </div>
         </div>
         <hr>
@@ -64,7 +71,7 @@
           <div class="col s1">
             <button class="btn waves-effect waves-blue" id="searchBtn" type="submit">Search</button>
             <!-- <input type="submit" value="Search"> -->
-          </div>            
+          </div>
         </div>
         <hr>
         <div class="row">
@@ -72,26 +79,64 @@
           <textarea id="textHere" class="response col s10 push-s1"></textarea>
         </div>
       </section>
-    </div>  
+    </div>
     <!-- particles.js container -->
     <div id="particles-js">
     </div>
-    
-    
-    
-    <!-- <canvas class="background"></canvas> -->
-    <!-- moment.js cdn  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!-- jQuery cdn  -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- materialize cdn  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- particles.js cdn  -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script> -->
-    <!-- js file links  -->
-    <script src="./script.js"></script>
-    <script src="./script2.js"></script>
-    <script src="./particles.js"></script>
-    <script src="./app.js"></script>
-  </body>
+  </section>
+  <!--End of Search Page-->
+
+  <!--Start of Collection Page-->
+  <section class="collectionPage">
+    <div class="container">
+      <section>
+        <div class="row">
+          <button id="btnDelete" class="btn waves-effect waves-blue col s1 push-s1" ><i class="fas fa-trash-alt"></i></button>
+          <a href="collection.html" id="btnCollection" class="btn waves-effect waves-light col s3 push-s2">Collection</a>
+          <!-- <a href="collection.html"><button class="button col s3 push-s2">Collection</button></a> -->
+          <a href="index.html" id="btnSearchResults" class="btn waves-effect waves-blue col s3 push-s2">Search Results</a>
+          <!-- <button id="btnSearchResults" class="col s3 push-s3"><a href="index.html">Search Results</a></button> -->
+        </div>
+        <div class="row">
+          <div class="col s3">
+            <button id="btnCollectionPrev" class="transport btn waves-effect waves-blue"><i class="fas fa-chevron-left"></i></button>
+          </div>
+          <div class="col s6">
+            <!-- <img src="phoneUI.png" alt="image of the day"/> -->
+            <img id="imgCollection" class="responsive-img" src="#" alt="image of the day"/>
+            <!-- <img class="responsive-img" src="https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space" alt="image of the day"/> -->
+          </div>
+          <div class="col s3">
+            <button id="btnCollectionNext" class="transport btn waves-effect waves-blue"><i class="fas fa-chevron-right fa-2x"></i></button>
+          </div>
+        </div>
+        <p>There are <span>some number</span> of images in your collection, use arrow buttons to view them</p>
+        <hr>
+        <div class="row">
+          <h4>Photo Details</h4>
+          <textarea id="textHere" class="response"></textarea>
+        </div>
+      </section>
+    </div>
+  </section>
+  <!--End of Collection Page-->
+
+
+
+  <!-- <canvas class="background"></canvas> -->
+  <!-- moment.js cdn  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- jQuery cdn  -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- materialize cdn  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- particles.js cdn  -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script> -->
+  <!-- js file links  -->
+  <script src="./script.js"></script>
+  <script src="./script2.js"></script>
+  <script src="./particles.js"></script>
+  <script src="./app.js"></script>
+</body>
+
 </html>
