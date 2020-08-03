@@ -11,37 +11,18 @@ $(function () {
     const photoDetails = $("#textHere");
     let marsQ = [];
     const mars = $("#Btn1");
-    const Astronomy = $("#Btn2");
-    const Hubble = $("#Btn3");
+    const astronomy = $("#Btn2");
+    const hubble = $("#Btn3");
 
     $(mars).on("click", function () {
-        var settings = {
-            "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=999&camera=mast&api_key=DEMO_KEY",
-            "method": "GET",
-            "timeout": 0,
-          };
-          
-          $.ajax(settings).done(function (response) {
-            //console.log(response);
-          })
-            .then(function (response) {
-                let results = response.data;
-                console.log(results);
-                for (let i = 0; i < 10; i++) {
-                    console.log(response.photos.img_src [i]);
-                    marsQ [i] = response.photos.img_src [i];
-                }
-                // const imgURL = response.img_src;
-                // apodImg.attr("src", imgURL);
-                // // const apodDiv = $("<div>");
-                // const photoText = response.camera;
-                // photoDetails.text(photoText);
-            });
+        category = "mars";
+
     });
 
-    $(Astronomy).on("click", function () {
+    $(astronomy).on("click", function () {
         category = "apod";
-        $(Astronomy).addClass("active")
+        $(astronomy).removeClass("waves-blue");
+        $(astronomy).addClass("waves-light")
     }); 
 
     $("#searchBtn").on("click", function (event) {
@@ -66,8 +47,32 @@ $(function () {
                 const photoText = response.explanation;
                 photoDetails.text(photoText);
             });
-
-        }    
+        } 
+        else if(category === mars) {
+            var settings = {
+                "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=999&camera=mast&api_key=DEMO_KEY",
+                "method": "GET",
+                "timeout": 0,
+              };
+              
+              $.ajax(settings).done(function (response) {
+                //console.log(response);
+              })
+                .then(function (response) {
+                    let results = response.data;
+                    console.log(results);
+                    for (let i = 0; i < 10; i++) {
+                        console.log(response.photos.img_src [i]);
+                        marsQ [i] = response.photos.img_src [i];
+                    }
+                    // const imgURL = response.img_src;
+                    // apodImg.attr("src", imgURL);
+                    // // const apodDiv = $("<div>");
+                    // const photoText = response.camera;
+                    // photoDetails.text(photoText);
+                });
+     
+        }   
     });
         
 
