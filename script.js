@@ -11,8 +11,11 @@ $(function () {
     const photoDetails = $("#textHere");
     let marsQ = [];
     const mars = $("#Btn1");
-    const astronomy = $("#Btn2");
-    const hubble = $("#Btn3");
+    const Astronomy = $("#Btn2");
+    const Hubble = $("#Btn3");
+    let photoArray = [];
+    let photoObject = {};
+
 
     $(mars).on("click", function () {
         category = "mars";
@@ -81,5 +84,28 @@ $(function () {
     // link with key 
     // https://api.nasa.gov/planetary/apod?api_key=eyXRExqNDHTblcMXT6ShJzFdoCQWXOLEPjII8Qlc
 
+        //Defining function to add array to local storage
+        function addPhotoInfo() {
+            photoObject = {
+                date : searchDate.val(),
+                url : apodImg.attr("src"),
+                details : photoDetails.val() 
+            }
+            console.log(photoObject);
+
+            photoArray.push(photoObject);
+            console.log(photoArray);
+          
+          }
+      
+        
+          
+          
+          $("#btnSave").on("click", function() {
+              addPhotoInfo();
+              localStorage.setItem("photoInfo", JSON.stringify(photoArray));
+          });
+
  
+          
 });
