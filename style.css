@@ -8,13 +8,15 @@ body {
 	width:100%;
   height:100%;
   /* background: transparent; */
-	/* background:#000044; */
-  background-image: url("spacebkgnd.png");
-  background-repeat: repeat;
+  background:#000044;
+  
+  /* background-image: url("spacebkgnd.png");
+  background-repeat: repeat; */
 }
 
 section.searchPage {
   display: block;
+  position: absolute;
 }
 
 section.collectionPage {
@@ -70,13 +72,16 @@ input {
 /* ---- particles.js container ---- */
 
 #particles-js{
+
   width: 100%;
   height: 100%;
   background-color: #080a3b;
-  background-image: url('');
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+  /* background-image: url(''); */
+  /* background-size: cover; */
+  /* background-position: 50% 50%;
+  background-repeat: no-repeat; */
+  z-index: -1;
+  position: absolute;
 }
 
 

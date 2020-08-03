@@ -6,6 +6,9 @@ $(function (){
     let photoIndex = 0;
     let photoText = "";
 
+    //Loads particles.js
+    // particlesJS.load('particles-js', 'particles.json');
+
     //Displaying generic photo when switched to collection page
     $(imgDisplay).attr("src", "https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space");
 
@@ -15,6 +18,9 @@ $(function (){
         if (photoInfoArray !== null) {
             console.log(photoInfoArray);
             console.log("It works!");
+        }
+        else {
+            photoInfoArray === [];
         }
     };
 
@@ -29,6 +35,8 @@ $(function (){
     $("#btnSearchResults").on("click", function(event) {
         $(".searchPage").show();
         $(".collectionPage").hide();
+        // $(".searchPage").css("position", "absolute");
+        // $(".collectionPage").css("position", "");
     });
 
     //When the collection button is clicked show relevant HTML and hide other section
@@ -36,6 +44,8 @@ $(function (){
         event.preventDefault();
         $(".searchPage").hide();
         $(".collectionPage").show();
+        // $(".collectionPage").css("position", "absolute");
+        // $(".searchPage").css("position", "");
         getLocalStorage();
     });
 
