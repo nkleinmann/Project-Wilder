@@ -13,11 +13,11 @@ body {
   background-repeat: repeat;
 }
 
-div.searchPage {
+section.searchPage {
   display: block;
 }
 
-div.collectionPage {
+section.collectionPage {
   display: none;
 }
 
