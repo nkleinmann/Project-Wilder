@@ -1,10 +1,13 @@
 $(function (){
-    const photoDetails = $("#textHere");
+    const photoDetails = $(".textHere");
     let photoInfoArray = []; 
     //Setting where to store image and setting photoIndex so the next and previous buttons work
     const imgDisplay = $("#imgCollection");
     let photoIndex = 0;
     let photoText = "";
+ 
+
+    
 
     //Displaying generic photo when switched to collection page
     $(imgDisplay).attr("src", "https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space");
@@ -26,22 +29,23 @@ $(function (){
     // })
 
     //When the search results button is clicked show relevant HTML and hide other section
-    $("#btnSearchResults").on("click", function(event) {
+    $(".btnSearchResults").on("click", function() {
         $(".searchPage").show();
         $(".collectionPage").hide();
     });
 
     //When the collection button is clicked show relevant HTML and hide other section
-    $("#btnCollection").on("click", function(event) {
-        event.preventDefault();
+    $(".btnCollection").on("click", function() {
         $(".searchPage").hide();
         $(".collectionPage").show();
         getLocalStorage();
+        let numberOfPhotos = photoInfoArray.length.toString();
+        $(".numberOfImages").html(numberOfPhotos);
     });
 
     
     //Next button event listener. Changes to next photo
-    $("#btnCollectionNext").on("click", function(event) {
+    $("#btnCollectionNext").on("click", function() {
         event.preventDefault();
 
         //Setting photo url to varabible, changing src, and adding to page
@@ -87,5 +91,5 @@ $(function (){
         };    
     });
 
-    
+
 });

@@ -17,114 +17,119 @@
 <!-- <body class="grey darken-4"> -->
 
 <body>
-  <div id="particles-js">
-  <header>
-    <h1>Pictures from Space</h1>
-  </header>
 
-  <!--Start of Search Page-->
-  <section class="searchPage">
-    <div class="container">
-      <section>
-        <div class="row">
-          <a href="collection.html" id="btnCollection"
-            class=" btn waves-effect waves-blue col s3 push-s3">Collection</a>
-          <a href="index.html" id="btnSearchResults" class=" btn waves-effect waves-light col s3 push-s3">Search
-            Results</a>
-          <button id="btnSave" class=" btn waves-effect waves-blue col s1 push-s4"><i class="fas fa-save"></i></button>
-          <!-- <button id="btnCollection" class="col s3 push-s3"><a href="collection.html">Collection</a></button> -->
-          <!-- <button id="btnSearchResults" class="col s3 push-s3" href="index.html">Search Results</button> -->
+  <div style="position:relative; height: 100%">
+    <div id="particles-js" style="position:absolute;"></div>
+    <div class="parent container">
+
+      <header class="row">
+        <div class="col s12">
+          <h1 class="center-align">Pictures from Space</h1>
         </div>
-        <div class="row">
-          <div class="col s3">
-            <button id="btnSearchPrev" class="transport btn waves-effect waves-blue"><i
-                class="fas fa-chevron-left fa-2x"></i></button>
-          </div>
-          <div class="col s6">
-            <!-- <img  id="imgSearch"class="responsive-img" src="https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space" alt="image of the day"/> -->
-            <!-- <img id="imgSearch" class="responsive-img" src="potw2025a.jpg" alt="image of the day"/> -->
-            <img id="imgSearch" class="responsive-img"
-              src="https://images-assets.nasa.gov/image/as11-40-5874/as11-40-5874~orig.jpg" alt="image of the day" />
-          </div>
-          <div class="col s3">
-            <button id="btnSearchNext" class="transport btn waves-effect waves-blue"><i
-                class="fas fa-chevron-right fa-2x"></i></button>
-          </div>
-        </div>
-        <hr>
-        <p>Choose a category;</p>
-        <div class="row">
-          <div class="col s3"></div>
-          <button id="Btn1" class="button col s2">Mars</button>
-          <button id="Btn2" class="button col s2">Astronomy</button>
-          <button id="Btn3" class="button col s2">Astroid</button>
-          <div class="col s3"></div>
-        </div>
-        <div class="row">
-          <div class="col s2"></div>
-          <div class="col s2">
-            <!-- <label>Choose a date:</label> -->
-            <p>Choose a date:</p>
-          </div>
-          <div class="col s3">
-            <!-- <input type="text" class="datepicker"> -->
-            <input type="date" id="searchDate" name="searchDate">
-          </div>
-          <div class="col s1">
-            <button class="btn waves-effect waves-blue" id="searchBtn" type="submit">Search</button>
-            <!-- <input type="submit" value="Search"> -->
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <h4>Photo Details</h4>
-          <textarea id="textHere" class="response col s10 push-s1"></textarea>
+      </header>
+
+
+      <!--Start of Search Page-->
+      <section class="searchPage">
+        <div>
+          <section>
+            <div class="row">
+                <button class="btn waves-effect waves-blue col s12 m5 btnCollection">Collection</button>
+                <button class="btn waves-effect waves-light col s12 m5 btnSearchResults">Search
+                  Results</button>
+                <button id="btnSave" class="btn waves-effect waves-blue col s12 m2"><i
+                    class="fas fa-save"></i></button>
+            </div>
+            <div class="row">
+              <div class="col s3">
+                <!-- <button class="transport btn waves-effect waves-blue btnSearchPrev collapsible"><i
+                    class="fas fa-chevron-left fa-2x"></i></button> -->
+              </div>
+              <div class="col s6">
+                <img id="imgSearch" class="responsive-img"
+                  src="https://images-assets.nasa.gov/image/as11-40-5874/as11-40-5874~orig.jpg"
+                  alt="image of the day" />
+              </div>
+              <div class="col s3">
+                <!-- <button id="btnSearchNext" class="transport btn waves-effect waves-blue"><i
+                    class="fas fa-chevron-right fa-2x"></i></button> -->
+              </div>
+            </div>
+            <hr>
+            
+            <div class="row">
+              <p class="col s12 m3">Choose a category;</p>
+              <button id="Btn1" class="button col s12 m3">Mars</button>
+              <button id="Btn2" class="button col s12 m3">Astronomy</button>
+              <button id="Btn3" class="button col s12 m3">Astroid</button>
+            </div>
+            <div class="row">
+              <div class="col s12 m6">
+                <p>Choose a date:</p>
+              </div>
+              <div class="col s12 m6">
+                <input type="date" id="searchDate" name="searchDate">
+              </div>
+            </div>
+            <div class="row">
+                <div class="col m3"></div>
+                <button class="btn waves-effect waves-blue col s12 m6" id="searchBtn" type="submit">Search</button>
+                <div class="col m3"></div>
+            </div>
+            <hr>
+            <div class="row">
+              <h4>Photo Details</h4>
+              <textarea class="response col s10 push-s1 textHere"></textarea>
+            </div>
+          </section>
         </div>
       </section>
-    </div>
-    <!-- particles.js container -->
-    <!-- <div id="particles-js">
-    </div> -->
-  </section>
-  <!--End of Search Page-->
+      <!--End of Search Page-->
 
-  <!--Start of collection page-->
-  <section class="collectionPage">
-    <div class="container">
-      <section>
-        <div class="row">
-          <button id="btnDelete" class="btn waves-effect waves-blue col s1 push-s1" ><i class="fas fa-trash-alt"></i></button>
-          <a href="collection.html" id="btnCollection" class="btn waves-effect waves-light col s3 push-s2">Collection</a>
-          <!-- <a href="collection.html"><button class="button col s3 push-s2">Collection</button></a> -->
-          <a href="index.html" id="btnSearchResults" class="btn waves-effect waves-blue col s3 push-s2">Search Results</a>
-          <!-- <button id="btnSearchResults" class="col s3 push-s3"><a href="index.html">Search Results</a></button> -->
-        </div>
-        <div class="row">
-          <div class="col s3">
-            <button id="btnCollectionPrev" class="transport btn waves-effect waves-blue"><i class="fas fa-chevron-left"></i></button>
-          </div>
-          <div class="col s6">
-            <!-- <img src="phoneUI.png" alt="image of the day"/> -->
-            <img id="imgCollection" class="responsive-img" src="#" alt="image of the day"/>
-            <!-- <img class="responsive-img" src="https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space" alt="image of the day"/> -->
-          </div>
-          <div class="col s3">
-            <button id="btnCollectionNext" class="transport btn waves-effect waves-blue"><i class="fas fa-chevron-right fa-2x"></i></button>
-          </div>
-        </div>
-        <p>There are <span>some number</span> of images in your collection, use arrow buttons to view them</p>
-        <hr>
-        <div class="row">
-          <h4>Photo Details</h4>
-          <textarea id="textHere" class="response"></textarea>
+      <!--Start of collection page-->
+      <section class="collectionPage">
+        <div>
+          <section>
+            <div class="row">
+              <button id="btnDelete" class="btn waves-effect waves-blue col s12 m2"><i
+                  class="fas fa-trash-alt"></i></button>
+              <button class="btn waves-effect waves-light col s12 m5 btnCollection">Collection</button>
+              <!-- <a href="collection.html"><button class="button col s3 push-s2">Collection</button></a> -->
+              <button class="btn waves-effect waves-blue col s12 m5 btnSearchResults">Search
+                Results</button>
+              <!-- <button id="btnSearchResults" class="col s3 push-s3"><a href="index.html">Search Results</a></button> -->
+            </div>
+            <div class="row">
+              <div class="col s3">
+                <button id="btnCollectionPrev" class="transport btn waves-effect waves-blue"><i
+                    class="fas fa-chevron-left"></i></button>
+              </div>
+              <div class="col s6">
+                <img id="imgCollection" class="responsive-img"
+                  src="https://images-assets.nasa.gov/image/as11-40-5874/as11-40-5874~orig.jpg"
+                  alt="image of the day" />
+                <!-- <img id="imgCollection" class="responsive-img" src="#" alt="image of the day" /> -->
+              </div>
+              <div class="col s3">
+                <button id="btnCollectionNext" class="transport btn waves-effect waves-blue"><i
+                    class="fas fa-chevron-right fa-2x"></i></button>
+              </div>
+            </div>
+            <p>There are <span class="numberOfImages"></span> images in your collection, use the arrow buttons to view them.</p>
+            <hr>
+            <div class="row">
+              <h4>Photo Details</h4>
+              <textarea class="response textHere"></textarea>
+            </div>
+          </section>
         </div>
       </section>
+      <!--End of collection page-->
+
     </div>
-  </section>
-  <!--End of collection page-->
 
+  </div>
 
-  <!-- <canvas class="background"></canvas> -->
   <!-- moment.js cdn  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <!-- jQuery cdn  -->
@@ -134,11 +139,13 @@
   <!-- particles.js cdn  -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script> -->
   <!-- js file links  -->
+
+
   <script src="./script.js"></script>
   <script src="./script2.js"></script>
   <script src="./particles.js"></script>
   <script src="./app.js"></script>
-</div>
+
 </body>
 
 </html>
