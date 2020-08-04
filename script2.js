@@ -5,6 +5,7 @@ $(function (){
     const imgDisplay = $("#imgCollection");
     let photoIndex = 0;
     let photoText = "";
+ 
 
     
 
