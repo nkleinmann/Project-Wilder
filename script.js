@@ -8,7 +8,7 @@ $(function () {
     let category = "";
     let searchDate = $("#searchDate");
     const apodImg = $("#imgSearch");
-    const photoDetails = $("#textHere");
+    const photoDetails = $(".textHere");
     let marsQ = [];
     const mars = $("#Btn1");
     const Astronomy = $("#Btn2");
