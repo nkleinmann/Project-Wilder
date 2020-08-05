@@ -29,14 +29,19 @@ $(function () {
         };
 
         $.ajax(settings).done(function (response) {
-            //console.log(response);
+            console.log(response);
         })
             .then(function (response) {
-                let results = response.data;
-                console.log(results);
+                const marsResults = response;
+                console.log(marsResults.photos);
+                // console.log(`an array of mars photos ${marsResults.photos}`);
+                // photos.forEach(function(marsResults) {
+                //     console.log(photos);
+                // });
                 for (let i = 0; i < 10; i++) {
-                    console.log(response.photos.img_src[i]);
-                    marsQ[i] = response.photos.img_src[i];
+                    console.log(marsResults.photos[i].id);
+                    console.log(marsResults.photos[i].img_src);
+                    // marsQ[i] = response.photos.img_src[i];
                 }
                 // const imgURL = response.img_src;
                 // apodImg.attr("src", imgURL);
