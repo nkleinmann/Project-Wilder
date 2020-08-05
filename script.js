@@ -74,9 +74,14 @@ $(function () {
 
     $(SpaceX).on("click", function () {
         category = "spaceXPic";
-        $(Astronomy).addClass("active")
+        $(SpaceX).addClass("active")
+    });
+    
+        
+    $("#dropDown").on("click", function (event) {
+           
         var settings = {
-            "url": "https://api.spacexdata.com/v4/launches/upcoming",
+            "url": "https://api.spacexdata.com/v4/rockets",
             "method": "GET",
             "timeout": 0,
           };
@@ -87,7 +92,15 @@ $(function () {
             .then(function (response) {
                 let results = response.data;
                 console.log(results);
-                const imgURL = response.flickr_images;
+                let imgURL = response[0].flickr_images;
+
+                var spaceXLength = response.length;
+                for (let i = 0; i < spaceXLength; i++) {
+                    imgURL = response[i].flickr_images;
+                    console.log(imgURL)
+                }
+
+                console.log(imgURL)
                 apodImg.attr("src", imgURL);
                 // const apodDiv = $("<div>");
                 const photoText = response.description;
@@ -117,6 +130,18 @@ $(function () {
 
     }
 
+    function spaceXInfo() {
+        photoObject = {
+            date: "",
+            url: apodImg.attr("src"),
+            details: photoDetails.val()
+        }
+        console.log(photoObject);
+
+        photoArray.push(photoObject);
+        console.log(photoArray);
+
+    }
 
 
 
