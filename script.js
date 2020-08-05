@@ -138,8 +138,8 @@ $(function () {
         event.preventDefault();
 
         if(category === "spaceXPic") {
-            $(apodImg).attr("src", simpleRockets[spaceXIndex].url);
-            $(photoDetails).text(simpleRockets[spaceXIndex].description);
+            apodImg.attr("src", simpleRockets[spaceXIndex].url);
+            photoDetails.text(simpleRockets[spaceXIndex].description);
             spaceXIndex++;
         }
     })  
