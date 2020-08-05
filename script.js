@@ -9,13 +9,20 @@ $(function () {
     let searchDate = $("#searchDate");
     const apodImg = $("#imgSearch");
     const photoDetails = $(".textHere");
-    let marsQ = [];
+    // mode buttons 
     const mars = $("#Btn1");
     const Astronomy = $("#Btn2");
     const SpaceX = $("#Btn3");
+    const buttonSearchPrev = $("#btnSearchPrev")
+    const buttonSearchNext = $("#btnSearchNext")
+
+    // mars result object 
+    let marsQ = [];
     let photoArray = [];
     let photoObject = {};
+    // SpaceX result object 
     let simpleRockets = [];
+    let spaceXIndex = 0;
 
     $(mars).on("click", function () {
         $("div.apodDate").hide();
@@ -104,6 +111,7 @@ $(function () {
             .then(function (response) {
                 const spaceXResults = response;
                 console.log(spaceXResults);
+                // thank you Mike Fearnley for this function 
                 const flatArray = function(data) {
                     let temp = [];
 
@@ -118,13 +126,24 @@ $(function () {
                 console.log(simpleRockets);
                 
                 // const imgURL = response.flickr_images;
-                apodImg.attr("src", simpleRockets[0].url);
+                apodImg.attr("src", simpleRockets[spaceXIndex].url);
                 // const apodDiv = $("<div>");
                 // const photoText = response.description;
-                // photoDetails.text(photoText);
+                photoDetails.text(simpleRockets[spaceXIndex].description);
+                spaceXIndex++;
             });
     });
 
+    $(buttonSearchNext).on("click", function() {
+        event.preventDefault();
+
+        if(category === "spaceXPic") {
+            $(apodImg).attr("src", simpleRockets[spaceXIndex].url);
+            $(photoDetails).text(simpleRockets[spaceXIndex].description);
+            spaceXIndex++;
+        }
+    })  
+        
     
 
 
