@@ -9,14 +9,27 @@ $(function () {
     let searchDate = $("#searchDate");
     const apodImg = $("#imgSearch");
     const photoDetails = $(".textHere");
-    let marsQ = [];
+    // mode buttons 
     const mars = $("#Btn1");
     const Astronomy = $("#Btn2");
     const SpaceX = $("#Btn3");
+    const buttonSearchPrev = $("#btnSearchPrev")
+    const buttonSearchNext = $("#btnSearchNext")
+
+    // mars result object 
+    let marsQ = [];
     let photoArray = [];
     let photoObject = {};
+    // SpaceX result object 
+    let simpleRockets = [];
+    let spaceXIndex = 0;
 
     $(mars).on("click", function () {
+        $("div.apodDate").hide();
+        category = "mars";
+        $(mars).addClass("active")
+        $(Astronomy).removeClass("active")
+        $(SpaceX).removeClass("active")
         var settings = {
             "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=999&camera=mast&api_key=DEMO_KEY",
             "method": "GET",
@@ -24,14 +37,19 @@ $(function () {
         };
 
         $.ajax(settings).done(function (response) {
-            //console.log(response);
+            console.log(response);
         })
             .then(function (response) {
-                let results = response.data;
-                console.log(results);
+                const marsResults = response;
+                console.log(marsResults.photos);
+                // console.log(`an array of mars photos ${marsResults.photos}`);
+                // photos.forEach(function(marsResults) {
+                //     console.log(photos);
+                // });
                 for (let i = 0; i < 10; i++) {
-                    console.log(response.photos.img_src[i]);
-                    marsQ[i] = response.photos.img_src[i];
+                    console.log(marsResults.photos[i].id);
+                    console.log(marsResults.photos[i].img_src);
+                    // marsQ[i] = response.photos.img_src[i];
                 }
                 // const imgURL = response.img_src;
                 // apodImg.attr("src", imgURL);
@@ -42,8 +60,11 @@ $(function () {
     });
 
     $(Astronomy).on("click", function () {
+        $("div.apodDate").show();
         category = "apod";
         $(Astronomy).addClass("active")
+        $(mars).removeClass("active")
+        $(SpaceX).removeClass("active")
     });
 
     $("#searchBtn").on("click", function (event) {
@@ -73,10 +94,13 @@ $(function () {
     });
 
     $(SpaceX).on("click", function () {
+        $("div.apodDate").hide();
         category = "spaceXPic";
-        $(Astronomy).addClass("active")
+        $(SpaceX).addClass("active")
+        $(Astronomy).removeClass("active")
+        $(mars).removeClass("active")
         var settings = {
-            "url": "https://api.spacexdata.com/v4/launches/upcoming",
+            "url": "https://api.spacexdata.com/v4/rockets",
             "method": "GET",
             "timeout": 0,
           };
@@ -85,16 +109,41 @@ $(function () {
             console.log(response);
           })
             .then(function (response) {
-                let results = response.data;
-                console.log(results);
-                const imgURL = response.flickr_images;
-                apodImg.attr("src", imgURL);
+                const spaceXResults = response;
+                console.log(spaceXResults);
+                // thank you Mike Fearnley for this function 
+                const flatArray = function(data) {
+                    let temp = [];
+
+                    data.forEach(function(rocket) {
+                        rocket.flickr_images.forEach(function(url) {
+                            temp.push({description: rocket.description, url});
+                        })
+                    });
+                    return temp;
+                }
+                simpleRockets = flatArray(spaceXResults);
+                console.log(simpleRockets);
+                
+                // const imgURL = response.flickr_images;
+                apodImg.attr("src", simpleRockets[spaceXIndex].url);
                 // const apodDiv = $("<div>");
-                const photoText = response.description;
-                photoDetails.text(photoText);
+                // const photoText = response.description;
+                photoDetails.text(simpleRockets[spaceXIndex].description);
+                spaceXIndex++;
             });
     });
 
+    $(buttonSearchNext).on("click", function() {
+        event.preventDefault();
+
+        if(category === "spaceXPic") {
+            $(apodImg).attr("src", simpleRockets[spaceXIndex].url);
+            $(photoDetails).text(simpleRockets[spaceXIndex].description);
+            spaceXIndex++;
+        }
+    })  
+        
     
 
 
