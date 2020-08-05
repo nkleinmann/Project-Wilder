@@ -13,8 +13,9 @@ $(function () {
     const mars = $("#Btn1");
     const Astronomy = $("#Btn2");
     const SpaceX = $("#Btn3");
-    const buttonSearchPrev = $("#btnSearchPrev")
-    const buttonSearchNext = $("#btnSearchNext")
+    const buttonSearchPrev = $("#btnSearchPrev");
+    const buttonSearchNext = $("#btnSearchNext");
+    const buttonSave = $("#btnSave");
 
     // mars result object 
     let marsQ = [];
@@ -140,11 +141,30 @@ $(function () {
         if(category === "spaceXPic") {
             $(apodImg).attr("src", simpleRockets[spaceXIndex].url);
             $(photoDetails).text(simpleRockets[spaceXIndex].description);
+            console.log(spaceXIndex);
             spaceXIndex++;
+            if (spaceXIndex >= simpleRockets.length) {
+                spaceXIndex = 0;
+            };
+            console.log(spaceXIndex);
+        }
+    })  
+
+    $(buttonSearchPrev).on("click", function() {
+        event.preventDefault();
+
+        if(category === "spaceXPic") {
+            $(apodImg).attr("src", simpleRockets[spaceXIndex].url);
+            $(photoDetails).text(simpleRockets[spaceXIndex].description);
+            console.log(spaceXIndex);
+            spaceXIndex--;
+            if (spaceXIndex < 0)  {
+                spaceXIndex = simpleRockets.length -1;
+            };
+            console.log(spaceXIndex);
         }
     })  
         
-    
 
 
     // Dynamically add elements to page to display image 
@@ -181,9 +201,10 @@ $(function () {
 
 
 
-    $("#btnSave").on("click", function () {
+    buttonSave.on("click", function () {
         addPhotoInfo();
         localStorage.setItem("photoInfo", JSON.stringify(photoArray));
+
     });
 
 
