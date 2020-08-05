@@ -15,6 +15,7 @@ $(function () {
     const SpaceX = $("#Btn3");
     let photoArray = [];
     let photoObject = {};
+    let simpleRockets = [];
 
     $(mars).on("click", function () {
         $("div.apodDate").hide();
@@ -92,7 +93,7 @@ $(function () {
         $(Astronomy).removeClass("active")
         $(mars).removeClass("active")
         var settings = {
-            "url": "https://api.spacexdata.com/v4/launches/upcoming",
+            "url": "https://api.spacexdata.com/v4/rockets",
             "method": "GET",
             "timeout": 0,
           };
@@ -101,13 +102,26 @@ $(function () {
             console.log(response);
           })
             .then(function (response) {
-                let results = response.data;
-                console.log(results);
-                const imgURL = response.flickr_images;
-                apodImg.attr("src", imgURL);
+                const spaceXResults = response;
+                console.log(spaceXResults);
+                const flatArray = function(data) {
+                    let temp = [];
+
+                    data.forEach(function(rocket) {
+                        rocket.flickr_images.forEach(function(url) {
+                            temp.push({description: rocket.description, url});
+                        })
+                    });
+                    return temp;
+                }
+                simpleRockets = flatArray(spaceXResults);
+                console.log(simpleRockets);
+                
+                // const imgURL = response.flickr_images;
+                apodImg.attr("src", simpleRockets[0].url);
                 // const apodDiv = $("<div>");
-                const photoText = response.description;
-                photoDetails.text(photoText);
+                // const photoText = response.description;
+                // photoDetails.text(photoText);
             });
     });
 
