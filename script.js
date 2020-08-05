@@ -17,6 +17,11 @@ $(function () {
     let photoObject = {};
 
     $(mars).on("click", function () {
+        $("div.apodDate").hide();
+        category = "mars";
+        $(mars).addClass("active")
+        $(Astronomy).removeClass("active")
+        $(SpaceX).removeClass("active")
         var settings = {
             "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=999&camera=mast&api_key=DEMO_KEY",
             "method": "GET",
@@ -42,8 +47,11 @@ $(function () {
     });
 
     $(Astronomy).on("click", function () {
+        $("div.apodDate").show();
         category = "apod";
         $(Astronomy).addClass("active")
+        $(mars).removeClass("active")
+        $(SpaceX).removeClass("active")
     });
 
     $("#searchBtn").on("click", function (event) {
@@ -73,8 +81,11 @@ $(function () {
     });
 
     $(SpaceX).on("click", function () {
+        $("div.apodDate").hide();
         category = "spaceXPic";
-        $(Astronomy).addClass("active")
+        $(SpaceX).addClass("active")
+        $(Astronomy).removeClass("active")
+        $(mars).removeClass("active")
         var settings = {
             "url": "https://api.spacexdata.com/v4/launches/upcoming",
             "method": "GET",

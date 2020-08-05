@@ -97,16 +97,5 @@ $(function (){
         };    
     });
 
-    $("#Btn2").on("click", function() {
-        $("div.apodDate").show();
-    })
-
-    $("#Btn1").on("click", function() {
-        $("div.apodDate").hide();
-    })
-
-    $("#Btn3").on("click", function() {
-        $("div.apodDate").hide();
-    })
 
 });
