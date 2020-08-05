@@ -7,7 +7,7 @@ $(function (){
     let photoText = "";
 
     //Displaying generic photo when switched to collection page
-    $(imgDisplay).attr("src", "https://via.placeholder.com/400x300.jpg/000044/ffffff?text=Pictures+From+Space");
+    $(imgDisplay).attr("src", "https://images-assets.nasa.gov/image/as11-40-5874/as11-40-5874~orig.jpg");
 
     //Gets photoInfoArray from local storage
     function getLocalStorage() {
