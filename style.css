@@ -18,6 +18,7 @@ div.parent {
   
 }
 
+/* Relevent Sections are shown when screen is refreshed */
 section.searchPage {
   display: block;
   position: absolute;
@@ -27,6 +28,11 @@ section.collectionPage {
   display: none;
   position: absolute;
 }
+
+div.apodDate {
+  display: none;
+}
+/*  */
 
 header, .container {
   background: transparent;
@@ -68,6 +74,10 @@ input {
   padding: 5px;
   height: 100px;
   background-color: lightblue;
+}
+
+.active {
+  background-color: rgb(17, 202, 184);
 }
 
 
