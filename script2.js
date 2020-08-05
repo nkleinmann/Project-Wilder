@@ -5,6 +5,11 @@ $(function (){
     const imgDisplay = $("#imgCollection");
     let photoIndex = 0;
     let photoText = "";
+    const buttonDelete = $("#btnDelete");
+    const buttonSearchResults = $(".btnSearchResults");
+    const buttonCollection = $(".btnCollection");
+    const buttonCollectionNext = $("#btnCollectionNext");
+    const buttonCollectionPrev = $("#btnCollectionPrev");
  
 
     
@@ -21,21 +26,22 @@ $(function (){
         }
     };
 
-    // //When the delete button is clicked, delete relevant object in array from local storage
-    // $("#btnDelete").on("click", function() {
-    //     // sets photoInfoArray to updated array (deletes object at index of photoIndex)
-    //     photoInfoArray = photoInfoArray.splice(photoIndex, 1);
-    //     console.log(photoInfoArray);
-    // })
+    //When the delete button is clicked, delete relevant object in array from local storage
+    buttonDelete.on("click", function() {
+        // sets photoInfoArray to updated array (deletes object at index of photoIndex)
+        photoInfoArray = photoInfoArray.splice(photoIndex, 1);
+        console.log(photoInfoArray);
+        getLocalStorage();
+    });
 
     //When the search results button is clicked show relevant HTML and hide other section
-    $(".btnSearchResults").on("click", function() {
+    buttonSearchResults.on("click", function() {
         $(".searchPage").show();
         $(".collectionPage").hide();
     });
 
     //When the collection button is clicked show relevant HTML and hide other section
-    $(".btnCollection").on("click", function() {
+    buttonCollection.on("click", function() {
         $(".searchPage").hide();
         $(".collectionPage").show();
         getLocalStorage();
@@ -45,7 +51,7 @@ $(function (){
 
     
     //Next button event listener. Changes to next photo
-    $("#btnCollectionNext").on("click", function() {
+    buttonCollectionNext.on("click", function() {
         event.preventDefault();
 
         //Setting photo url to varabible, changing src, and adding to page
@@ -69,7 +75,7 @@ $(function (){
 
 
     //Previous button event listener. Changes to previous button
-    $("#btnCollectionPrev").on("click", function(event) {
+    buttonCollectionPrev.on("click", function(event) {
         event.preventDefault();
 
         //Setting photo url to varabible, changing src, and adding to page
@@ -91,5 +97,16 @@ $(function (){
         };    
     });
 
+    $("#Btn2").on("click", function() {
+        $("div.apodDate").show();
+    })
+
+    $("#Btn1").on("click", function() {
+        $("div.apodDate").hide();
+    })
+
+    $("#Btn3").on("click", function() {
+        $("div.apodDate").hide();
+    })
 
 });
