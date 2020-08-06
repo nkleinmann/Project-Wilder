@@ -30,6 +30,7 @@ section.collectionPage {
   position: absolute;
 }
 
+#searchBtn,
 div.apodDate {
   display: none;
 }
@@ -96,6 +97,7 @@ input {
   background-repeat: no-repeat;
   z-index: -1;
 }
+
 
 
 

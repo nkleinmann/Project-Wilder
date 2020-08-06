@@ -27,6 +27,7 @@ $(function () {
 
     $(mars).on("click", function () {
         $("div.apodDate").hide();
+        $("#searchBtn").hide();
         category = "mars";
         $(mars).addClass("active")
         $(Astronomy).removeClass("active")
@@ -62,6 +63,7 @@ $(function () {
 
     $(Astronomy).on("click", function () {
         $("div.apodDate").show();
+        $("#searchBtn").show();
         category = "apod";
         $(Astronomy).addClass("active")
         $(mars).removeClass("active")
@@ -96,6 +98,7 @@ $(function () {
 
     $(SpaceX).on("click", function () {
         $("div.apodDate").hide();
+        $("#searchBtn").hide();
         category = "spaceXPic";
         $(SpaceX).addClass("active")
         $(Astronomy).removeClass("active")
