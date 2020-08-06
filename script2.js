@@ -10,7 +10,6 @@ $(function (){
     const buttonCollection = $(".btnCollection");
     const buttonCollectionNext = $("#btnCollectionNext");
     const buttonCollectionPrev = $("#btnCollectionPrev");
- 
 
     
 
@@ -20,19 +19,20 @@ $(function (){
     //Gets photoInfoArray from local storage
     function getLocalStorage() {
         photoInfoArray = JSON.parse(localStorage.getItem("photoInfo"));
-        if (photoInfoArray !== null) {
-            console.log(photoInfoArray);
-            console.log("It works!");
-        }
+        // if (photoInfoArray !== null) {
+        //     console.log(photoInfoArray);
+        //     console.log("It works!");
+        // }
     };
 
-    //When the delete button is clicked, delete relevant object in array from local storage
-    buttonDelete.on("click", function() {
-        // sets photoInfoArray to updated array (deletes object at index of photoIndex)
-        photoInfoArray = photoInfoArray.splice(photoIndex, 1);
-        console.log(photoInfoArray);
-        getLocalStorage();
-    });
+    // //When the delete button is clicked, delete relevant object in array from local storage
+    // buttonDelete.on("click", function() {
+    //     // sets photoInfoArray to updated array (deletes object at index of photoIndex)
+    //     photoInfoArray = photoInfoArray.splice(photoIndex, 1);
+    //     console.log(photoInfoArray);
+    //     localStorage.setItem("photoInfo", JSON.stringify(photoInfoArray));
+    //     getLocalStorage();
+    // });
 
     //When the search results button is clicked show relevant HTML and hide other section
     buttonSearchResults.on("click", function() {
