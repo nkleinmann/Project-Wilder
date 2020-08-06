@@ -13,8 +13,9 @@ $(function () {
     const mars = $("#Btn1");
     const Astronomy = $("#Btn2");
     const SpaceX = $("#Btn3");
-    const buttonSearchPrev = $("#btnSearchPrev")
-    const buttonSearchNext = $("#btnSearchNext")
+    const buttonSearchPrev = $("#btnSearchPrev");
+    const buttonSearchNext = $("#btnSearchNext");
+    const buttonSave = $("#btnSave");
 
     // mars result object 
     let marsQ = [];
@@ -26,6 +27,7 @@ $(function () {
 
     $(mars).on("click", function () {
         $("div.apodDate").hide();
+        $("#searchBtn").hide();
         category = "mars";
         $(mars).addClass("active")
         $(Astronomy).removeClass("active")
@@ -61,6 +63,7 @@ $(function () {
 
     $(Astronomy).on("click", function () {
         $("div.apodDate").show();
+        $("#searchBtn").show();
         category = "apod";
         $(Astronomy).addClass("active")
         $(mars).removeClass("active")
@@ -95,6 +98,7 @@ $(function () {
 
     $(SpaceX).on("click", function () {
         $("div.apodDate").hide();
+        $("#searchBtn").hide();
         category = "spaceXPic";
         $(SpaceX).addClass("active")
         $(Astronomy).removeClass("active")
@@ -141,10 +145,28 @@ $(function () {
             apodImg.attr("src", simpleRockets[spaceXIndex].url);
             photoDetails.text(simpleRockets[spaceXIndex].description);
             spaceXIndex++;
+            if (spaceXIndex >= simpleRockets.length) {
+                spaceXIndex = 0;
+            };
+            console.log(spaceXIndex);
+        }
+    })  
+
+    $(buttonSearchPrev).on("click", function() {
+        event.preventDefault();
+
+        if(category === "spaceXPic") {
+            $(apodImg).attr("src", simpleRockets[spaceXIndex].url);
+            $(photoDetails).text(simpleRockets[spaceXIndex].description);
+            console.log(spaceXIndex);
+            spaceXIndex--;
+            if (spaceXIndex < 0)  {
+                spaceXIndex = simpleRockets.length -1;
+            };
+            console.log(spaceXIndex);
         }
     })  
         
-    
 
 
     // Dynamically add elements to page to display image 
@@ -166,12 +188,25 @@ $(function () {
 
     }
 
+    function spaceXInfo() {
+        photoObject = {
+            date: "",
+            url: apodImg.attr("src"),
+            details: photoDetails.val()
+        }
+        console.log(photoObject);
+
+        photoArray.push(photoObject);
+        console.log(photoArray);
+
+    }
 
 
 
-    $("#btnSave").on("click", function () {
+    buttonSave.on("click", function () {
         addPhotoInfo();
         localStorage.setItem("photoInfo", JSON.stringify(photoArray));
+
     });
 
 

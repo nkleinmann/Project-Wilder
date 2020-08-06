@@ -15,9 +15,13 @@ div.parent {
   max-height: 100vh;
   height: 100vh;
   overflow: auto;
-  background-color: rgba(0,0,255,0.3);
+  background-color: rgba(220,220,220,.3);
   
 }
+
+/* .responsive-image {
+  min-width: 100%;
+} */
 
 /* Relevent Sections are shown when screen is refreshed */
 section.searchPage {
@@ -30,10 +34,13 @@ section.collectionPage {
   position: absolute;
 }
 
+#searchBtn,
 div.apodDate {
   display: none;
 }
 /*  */
+
+
 
 header, .container {
   background: transparent;
@@ -96,6 +103,7 @@ input {
   background-repeat: no-repeat;
   z-index: -1;
 }
+
 
 
 
