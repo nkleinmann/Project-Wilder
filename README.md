@@ -1,23 +1,31 @@
 # Project-Wilder
 
-Image object properties include;
-  imageURL; the link to the picture
-  imageInfo; the story behind the image. (apod comes with significent story attached, for the others, we may need to build that.)
-  imageDate; the search parameter we use to get the image in the first place.
+This website was a collaboration between Shawn Rather (Back End Developer (JS)), Michael McCosh (Front End Developer - UX/UI), and Nicole Kleinmann (Team Lead/Communication).  We had specific roles, but also helped eachother out frequently throughout the development process. This website is designed for anyone who likes space. We used two APIs; [NASA's APOD (astronomy photo of the day)](https://api.nasa.gov/) and [hubblesite API] (http://hubblesite.org/api/documentation).
 
-Mars rover API delivers hundreds of images on every request. Only the first 10 need to be captured for this project. Search parameters should include earth_date and camera. (don't use "sol" search parameter) 
+Parts of Website: 
+1. User is presented with Search Results when website is open.
+2. User can select to choose between the astronomy and SpaceX category to view photos. 
+3. When astronomy is selected, user will be asked to enter a date.
+4. When SpaceX is selected, user will see arrow buttons to view available SpaceX photos.
+5. When Search is clicked, photo(s) and description(s) for relevent images will appear on screen.
+6. User can save photos to their personal collection using local storage.
+7. When user clicks collection button, user has the ability to view all images saved in collection by selecting the arrow buttons and the number of photos in collection is displayed.
+8. User can delete a photo from their personal collection.
+9. User can switch between Search Results and Collection page. 
 
 
+Challenges: 
 
-![image](PfSUIv1.1.png "basic layout")
+This was our first group project. We learned how to deal with merge conflicts and how to problem solve and debug as a team.  Being able to store images from both APIs into the same array of objects took some time. Once we were able to do this, then we were able to store this array of objects into local storage to make our collection page possible.
 
-Collection and Search Results buttons should each have on and off states with changing colors and be mutually exclusive (like radio buttons) so one will always be active and the other inactive.
-When "Collection" is active, a "delete" button should appear to the left of it. 
-When "Search Results" button is active, a "save" button should appear to the right of it.
-There will be buttons for next and previous pictures that disappear when at last and first image. 
-the Mars, Astronomy, and EPIC buttons will be used to activate the search for those catagories.
+Here is the link to our application: [Pictures from Space] (https://nkleinmann.github.io/Project-Wilder/) 
 
-The space currently occupied by Btn 4, 5, & 6 will be the search date entry
+Screenshots of Website: 
 
-each photo will have a little story to go with it that will appear in the details text area.
+Search Results:
+![Screen Shot 2020-08-05 at 9 50 19 PM](https://user-images.githubusercontent.com/65608809/89482297-8c14d400-d767-11ea-9b7e-32f7580417aa.png)
+
+Collection:
+![Screen Shot 2020-08-05 at 9 49 54 PM](https://user-images.githubusercontent.com/65608809/89482259-79020400-d767-11ea-8c71-c9593d29b4c5.png)
+
 
