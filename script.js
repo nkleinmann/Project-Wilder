@@ -16,9 +16,13 @@ $(function () {
     const buttonSearchPrev = $("#btnSearchPrev");
     const buttonSearchNext = $("#btnSearchNext");
     const buttonSave = $("#btnSave");
+    const buttonSearch = $("#searchBtn");
+    const buttonClassTransport = $(".transport");
+    const datePicker = $("div.apodDate");
 
     // mars result object 
-    let marsQ = [];
+    let marsResults = [];
+    let marsIndex = 0;
     let photoArray = [];
     let photoObject = {};
     // SpaceX result object 
@@ -26,51 +30,58 @@ $(function () {
     let spaceXIndex = 0;
 
     $(mars).on("click", function () {
-        $("div.apodDate").hide();
-        $("#searchBtn").hide();
+        datePicker.hide();
+        buttonSearch.hide();
         category = "mars";
+        buttonClassTransport.show();
         $(mars).addClass("active")
         $(Astronomy).removeClass("active")
         $(SpaceX).removeClass("active")
         var settings = {
-            "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=999&camera=mast&api_key=DEMO_KEY",
+            "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=999&camera=MAST&api_key=DEMO_KEY",
             "method": "GET",
             "timeout": 0,
         };
+
+            // alt api call  "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-5-21&camera=MAST&api_key=DEMO_KEY",
+            
 
         $.ajax(settings).done(function (response) {
             console.log(response);
         })
             .then(function (response) {
-                const marsResults = response;
-                console.log(marsResults.photos);
-                // console.log(`an array of mars photos ${marsResults.photos}`);
+                marsResults = response;
+                // console.log(marsResults.photos);
+
                 // photos.forEach(function(marsResults) {
                 //     console.log(photos);
                 // });
-                for (let i = 0; i < 10; i++) {
-                    console.log(marsResults.photos[i].id);
-                    console.log(marsResults.photos[i].img_src);
-                    // marsQ[i] = response.photos.img_src[i];
-                }
-                // const imgURL = response.img_src;
-                // apodImg.attr("src", imgURL);
-                // // const apodDiv = $("<div>");
-                // const photoText = response.camera;
-                // photoDetails.text(photoText);
+
+                // for (marsIndex = 0; marsIndex < 10; marsIndex++) {
+                //     console.log(marsResults.photos[marsIndex].id);
+                //     console.log(marsResults.photos[marsIndex].img_src);
+                //     // marsQ[i] = response.photos.img_src[i];
+                // }
+
+                apodImg.attr("src", marsResults.photos[marsIndex].img_src);
+                photoDetails.text(marsResults.photos[marsIndex].id);
+                marsIndex++;
+                // photoDetails.text(response.camera);
             });
     });
 
     $(Astronomy).on("click", function () {
-        $("div.apodDate").show();
-        $("#searchBtn").show();
+        datePicker.show();
+        buttonSearch.show();
+        buttonClassTransport.hide();
+        // hide transport buttons 
         category = "apod";
         $(Astronomy).addClass("active")
         $(mars).removeClass("active")
         $(SpaceX).removeClass("active")
     });
 
-    $("#searchBtn").on("click", function (event) {
+    buttonSearch.on("click", function (event) {
         event.preventDefault();
         if (category === "apod") {
             var settings = {
@@ -97,8 +108,9 @@ $(function () {
     });
 
     $(SpaceX).on("click", function () {
-        $("div.apodDate").hide();
-        $("#searchBtn").hide();
+        datePicker.hide();
+        buttonSearch.hide();
+        buttonClassTransport.show();
         category = "spaceXPic";
         $(SpaceX).addClass("active")
         $(Astronomy).removeClass("active")
@@ -141,6 +153,12 @@ $(function () {
     $(buttonSearchNext).on("click", function() {
         event.preventDefault();
 
+        if(category === "mars") {
+            apodImg.attr("src", marsResults.photos[marsIndex].img_src);
+            photoDetails.text(marsResults.photos[marsIndex].id);
+            marsIndex++;
+            if(marsIndex >= marsResults.photos.length) {marsIndex = 0;}
+        }
         if(category === "spaceXPic") {
             apodImg.attr("src", simpleRockets[spaceXIndex].url);
             photoDetails.text(simpleRockets[spaceXIndex].description);
@@ -155,9 +173,15 @@ $(function () {
     $(buttonSearchPrev).on("click", function() {
         event.preventDefault();
 
+        if(category === "mars") {
+            apodImg.attr("src", marsResults.photos[marsIndex].img_src);
+            photoDetails.text(marsResults.photos[marsIndex].id);
+            marsIndex--;
+            if(marsIndex < 0) {marsIndex = marsResults.photos.length -1;}
+        }
         if(category === "spaceXPic") {
-            $(apodImg).attr("src", simpleRockets[spaceXIndex].url);
-            $(photoDetails).text(simpleRockets[spaceXIndex].description);
+            apodImg.attr("src", simpleRockets[spaceXIndex].url);
+            photoDetails.text(simpleRockets[spaceXIndex].description);
             console.log(spaceXIndex);
             spaceXIndex--;
             if (spaceXIndex < 0)  {

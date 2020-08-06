@@ -13,6 +13,7 @@ $(function () {
     const searchPage = $(".searchPage");
     const collectionPage = $(".collectionPage");
     const numberOfImages = $(".numberOfImages");
+    const buttonClassTransport = $(".transport");
     let numberOfPhotos = 0;
 
 
@@ -81,6 +82,7 @@ $(function () {
     buttonCollection.on("click", function () {
         searchPage.hide();
         collectionPage.show();
+        buttonClassTransport.show();
         getLocalStorage();
         refreshImages();
     });
@@ -105,6 +107,8 @@ $(function () {
         refreshImages();
 
     });
+
+   
 
 
 });
