@@ -19,6 +19,10 @@ div.parent {
   
 }
 
+/* .responsive-image {
+  min-width: 100%;
+} */
+
 /* Relevent Sections are shown when screen is refreshed */
 section.searchPage {
   display: block;
@@ -35,6 +39,8 @@ div.apodDate {
   display: none;
 }
 /*  */
+
+
 
 header, .container {
   background: transparent;
