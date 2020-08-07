@@ -49,6 +49,7 @@ $(function () {
             $(imgDisplay).attr("src", "https://images-assets.nasa.gov/image/as11-40-5874/as11-40-5874~orig.jpg");
             numberOfPhotos = 0;
             numberOfImages.html(numberOfPhotos);
+            photoDetails.text("");
             return;
         }
         //If photoIndex is greater than or equal to the photoArray length, set photoIndex to 0 and go back to the starting image

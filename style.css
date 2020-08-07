@@ -19,30 +19,16 @@ div.parent {
   
 }
 
-.imgDiv {
-  display: flex; // make us of Flexbox
-  align-items: center; // does vertically center the desired content
-  justify-content: center; // horizontally centers single line items
-  text-align: center; // optional, but helps horizontally center text that breaks into multiple lines
-}
-
-.responsive-image{
-  width:inherit;
-}
-
-/* .responsive-image {
-  min-width: 100%;
-} */
 
 /* Relevent Sections are shown when screen is refreshed */
 section.searchPage {
   display: block;
-  position: absolute;
-}
+  /* position: absolute; */
+} 
 
 section.collectionPage {
   display: none;
-  position: absolute;
+  /* position: absolute; */
 }
 
 #searchBtn,
@@ -76,7 +62,7 @@ header, .container {
   text-align: center;
   font-size: 1.2em;
   line-height: 1.5;
-
+  
 }
 
 .waves-effect.waves-blue {
@@ -100,6 +86,10 @@ input {
 }
 
 
+.responsive-img {
+  height: 500px;
+  width: 800px;
+} 
 
 
 /* ---- particles.js container ---- */
