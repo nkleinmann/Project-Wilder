@@ -1,6 +1,6 @@
 # Project-Wilder
 
-This website was a collaboration between Shawn Rather (Back End Developer (JS)), Michael McCosh (Front End Developer - UX/UI), and Nicole Kleinmann (Team Lead/Communication).  We had specific roles, but also helped eachother out frequently throughout the development process. This website is designed for anyone who likes space. We used three APIs; [NASA's APOD (astronomy photo of the day)](https://api.nasa.gov/), [NASA's Mars Rover](ttps://api.nasa.gov/) and [hubblesite API](http://hubblesite.org/api/documentation).
+This website was a collaboration between Shawn Rather (Back End Developer (JS)), Michael McCosh (Front End Developer - UX/UI), and Nicole Kleinmann (Team Lead/Communication).  We had specific roles, but also helped eachother out frequently throughout the development process. This website is designed for anyone who likes space. We used three APIs; [NASA's APOD (astronomy photo of the day)](https://api.nasa.gov/), [NASA's Mars Rover](ttps://api.nasa.gov/) and [SpaceX API](http://hubblesite.org/api/documentation).
 
 Parts of Website: 
 1. User is presented with Search Results when website is open.
