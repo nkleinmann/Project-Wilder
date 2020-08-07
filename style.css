@@ -19,6 +19,17 @@ div.parent {
   
 }
 
+.imgDiv {
+  display: flex; // make us of Flexbox
+  align-items: center; // does vertically center the desired content
+  justify-content: center; // horizontally centers single line items
+  text-align: center; // optional, but helps horizontally center text that breaks into multiple lines
+}
+
+.responsive-image{
+  width:inherit;
+}
+
 /* .responsive-image {
   min-width: 100%;
 } */
