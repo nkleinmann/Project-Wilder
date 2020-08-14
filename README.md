@@ -2,6 +2,11 @@
 
 This website was a collaboration between Shawn Rather (Back End Developer (JS)), Michael McCosh (Front End Developer - UX/UI), and Nicole Kleinmann (Team Lead/Communication).  We had specific roles, but also helped eachother out frequently throughout the development process. This website is designed for anyone who likes space. We used three APIs; [NASA's APOD (astronomy photo of the day)](https://api.nasa.gov/), [NASA's Mars Rover](ttps://api.nasa.gov/) and [SpaceX API](http://hubblesite.org/api/documentation).
 
+Technologies used:
+HTML, CSS and CSS Framework: Materialize, JavaScript jQuery
+New Third-Party API: particles.js
+Server-Side APIs: NASA APIs and Space X API
+
 Parts of Website: 
 1. User is presented with Search Results when website is open.
 2. User can select to choose between the Astronomy, Mars, and SpaceX category to view photos. 
@@ -24,6 +29,14 @@ Screenshots of Website:
 
 Search Results:
 ![Screen Shot 2020-08-05 at 9 50 19 PM](https://user-images.githubusercontent.com/65608809/89482297-8c14d400-d767-11ea-9b7e-32f7580417aa.png)
+
+Collection Page:
+![photo](https://user-images.githubusercontent.com/65608809/90246369-8459cd00-de02-11ea-8d63-aea60d375c13.jpg)
+
+Contact Info:
+Nicole Kleinmann: nekleinmann@gmail.com, https://github.com/nkleinmann
+Macks: https://github.com/macksm3
+Shawn: https://github.com/SAR-SA
 
 
 
