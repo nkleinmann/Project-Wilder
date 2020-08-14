@@ -34,7 +34,7 @@ Collection Page:
 ![photo](https://user-images.githubusercontent.com/65608809/90246369-8459cd00-de02-11ea-8d63-aea60d375c13.jpg)
 
 Contact Info:
-Nicole Kleinmann: nekleinmann@gmail.com
+Nicole Kleinmann: nekleinmann@gmail.com, https://github.com/nkleinmann
 Macks: https://github.com/macksm3
 Shawn: https://github.com/SAR-SA
 
