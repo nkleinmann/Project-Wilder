@@ -36,7 +36,7 @@ Collection Page:
 Contact Info:
 Nicole Kleinmann: nekleinmann@gmail.com, https://github.com/nkleinmann
 Michael Macks McCosh: michael.mccosh@gmail.com,  https://github.com/macksm3
-Shawn: https://github.com/SAR-SA
+Shawn: sarsa.web@gmail.com, https://github.com/SAR-SA
 
 
 
